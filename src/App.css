@@ -1,0 +1,409 @@
+/***********MOVIE CARD******/
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html,
+body {
+  margin: 0;
+  background: black;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.movie_card {
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 350px;
+  margin: 100px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+.movie_card:hover {
+  transform: scale(1.02);
+  transition: all 0.4s;
+}
+.movie_card .info_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-blend-mode: multiply;
+  z-index: 2;
+  border-radius: 10px;
+}
+.movie_card .info_section .movie_header {
+  position: relative;
+  padding: 25px;
+  height: 40%;
+}
+.movie_card .info_section .movie_header h1 {
+  color: #fff;
+  font-weight: 400;
+}
+.movie_card .info_section .movie_header h4 {
+  color: #9ac7fa;
+  font-weight: 400;
+}
+.movie_card .info_section .movie_header .minutes {
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+.movie_card .info_section .movie_header .type {
+  display: inline-block;
+  color: #cee4fd;
+  margin-left: 10px;
+}
+.movie_card .info_section .movie_header .locandina {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  height: 120px;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
+}
+.movie_card .info_section .movie_desc {
+  padding: 25px;
+  height: 50%;
+}
+.movie_card .info_section .movie_desc .text {
+  color: #cfd6e1;
+}
+.movie_card .info_section .movie_social {
+  height: 10%;
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+.movie_card .info_section .movie_social ul {
+  list-style: none;
+  padding: 0;
+}
+.movie_card .info_section .movie_social ul li {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s;
+  transition-delay: 0.15s;
+  margin: 0 10px;
+}
+.movie_card .info_section .movie_social ul li:hover {
+  transition: color 0.3s;
+  color: rgba(255, 255, 255, 0.8);
+}
+.movie_card .info_section .movie_social ul li i {
+  font-size: 19px;
+  cursor: pointer;
+}
+.movie_card .blur_back {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  right: 0;
+  background-size: cover;
+  border-radius: 11px;
+}
+@media screen and (min-width: 768px) {
+  .movie_header {
+    width: 60%;
+  }
+  .movie_desc {
+    width: 50%;
+  }
+  .info_section {
+    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
+  }
+  .blur_back {
+    width: 80%;
+    background-position: -100% 10% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .movie_card {
+    width: 95%;
+    margin: 70px auto;
+    min-height: 350px;
+    height: auto;
+  }
+  .blur_back {
+    width: 100%;
+    background-position: 50% 50% !important;
+  }
+  .movie_header {
+    width: 100%;
+    margin-top: 85px;
+  }
+  .movie_desc {
+    width: 100%;
+  }
+  .info_section {
+    background: linear-gradient(to top, #141413 50%, transparent 100%);
+    display: inline-grid;
+  }
+}
+#bright {
+  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
+}
+#bright:hover {
+  box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
+}
+.bright_back {
+  background: url("https://occ-0-2433-448.1.nflxso.net/art/cd5c9/3e192edf2027c536e25bb5d3b6ac93ced77cd5c9.jpg");
+}
+#tomb {
+  box-shadow: 0px 0px 150px -45px rgba(19, 160, 134, 0.6);
+}
+#tomb:hover {
+  box-shadow: 0px 0px 120px -55px rgba(19, 160, 134, 0.6);
+}
+.tomb_back {
+  background: url("https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png");
+}
+#ave {
+  box-shadow: 0px 0px 150px -45px rgba(199, 147, 75, 0.7);
+  margin-bottom: 200px;
+}
+#ave:hover {
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
+}
+.ave_back {
+  background: url("https://www.gannett-cdn.com/-mm-/c03fd140debe8ad4c05cf81a5cad7ad61a12ce52/c=0-1580-2985-3266&r=x803&c=1600x800/local/-/media/2017/06/09/USATODAY/USATODAY/636326272873599176-Black-Panther-Teaser.jpg");
+}
+/********** ADD MOVIE ************/
+.add-movie {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.add-movie .bbb {
+  width: 70%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(160, 47, 47, 0.308);
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
+  border-radius: 10px;
+  margin-top: 120px;
+  color: white;
+  font-weight: bold;
+}
+.add-movie .bbb:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 4, 4, 0.719);
+  box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.7);
+  border-radius: 10px;
+  z-index: 999;
+  position: fixed;
+}
+
+.modal-body button {
+  padding: 5px !important;
+  border-radius: 5px !important;
+  outline-style: none !important;
+  position: absolute;
+  right: 10px !important;
+  top: 15px !important;
+  color: #0d0d0c !important;
+  background-color: rgba(71, 21, 21, 0.774) !important;
+}
+.modal-body {
+  width: 50%;
+  height: 600px;
+  background-color: rgba(34, 28, 28, 0.534);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 80px;
+  position: relative;
+  padding: 12px;
+}
+.modal-body > * {
+  width: 100%;
+  display: flex;
+  padding: 12px;
+  margin-top: 50px;
+  justify-content: space-around;
+  color: #0d0d0c;
+  background-color: rgba(180, 21, 21, 0.575);
+  border-radius: 20px;
+}
+.modal-body i {
+  width: 20%;
+  padding: 10px !important;
+  background-color: rgb(201, 27, 27) !important;
+  border-radius: 20px !important ;
+}
+.BUT {
+  position: absolute;
+  margin-top: 500px;
+  width: 50%;
+  left: 150px;
+}
+/************NAVIGATION************/
+.nav {
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 8px 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 99999;
+}
+.nav .nav-list img {
+  width: 100px !important;
+  margin-right: 50px;
+}
+.nav .nav-list {
+  display: flex;
+  align-items: center;
+}
+.nav .nav-list ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav .nav-list ul li {
+  margin-left: 20px;
+}
+.nav .nav-logo {
+  display: flex;
+}
+.nav .nav-logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+.nav .nav-logo i {
+  padding: 2px;
+  height: 20px;
+  background-color: rgba(207, 25, 25, 0.637);
+  border-radius: 2px;
+  margin-top: 13px;
+}
+/********* scrollbar*********/
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(194, 17, 17, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(119, 38, 38);
+  outline: 1px solid rgb(196, 16, 16);
+}
+/******************************************/
+.searsh-input {
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  padding: 8px;
+  margin-right: 15px;
+  margin-top: 9px;
+  outline: none;
+}
+.home-page {
+  position: relative;
+  margin-top: 80px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.home-page .start {
+  position: absolute;
+  width: 500px;
+  height: 300px;
+  padding: 20px;
+  left: 20px;
+  top: 100px;
+  text-align: center;
+
+  background-color: rgba(255, 255, 255, 0.198);
+}
+.home-page img {
+  margin-top: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.stars {
+  margin-top: 20px !important;
+  align-self: center !important;
+}
+.tv {
+}
+/*............ tvshows...........*/
+.tvshows img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+}
+.tvshows .tv {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  padding: 20px;
+  left: 20px;
+  top: 100px;
+  text-align: center;
+
+  background-color: rgba(255, 255, 255, 0.198);
+}
+.tvshows .tv ul {
+  margin-top: 100px;
+  list-style: none;
+  outline: none;
+  align-self: flex-start !important;
+}
+.tvshows .tv p {
+  margin-top: 50px;
+}
+.Movie-details {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.Movie-details img {
+  margin-top: 80px;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.details {
+  width: 600px;
+  height: 500px;
+  color: rgba(255, 255, 255, 0.342);
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
